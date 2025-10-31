@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chinmayi S — Frontend Developer</title>
+  <style>
+    /* White & Pink professional theme */
+    :root{
+      --bg: #ffffff;
+      --muted: #6b7280;
+      --accent: #ff4da6;
+      --accent-2: #ff86be;
+      --card: #f7f8fb;
+      --radius: 14px;
+      --maxw: 980px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfbfe 100%);
+      color:#0f1724;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:26px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .photo-small{
+      width:86px;height:86px;border-radius:12px;overflow:hidden;flex-shrink:0;
+      border:3px solid rgba(255,77,166,0.12);box-shadow:0 8px 30px rgba(255,77,166,0.08);
+    }
+    .photo-small img{width:100%;height:100%;object-fit:cover;display:block}
+    .brand h1{margin:0;font-size:20px}
+    .brand p{margin:0;font-size:13px;color:var(--muted)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-size:14px}
+    nav a:hover{color:var(--accent)}
+    /* Hero */
+    .hero{
+      background: linear-gradient(180deg, #fff, #fff);
+      border-radius:var(--radius);
+      padding:22px;
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:18px;
+      align-items:center;
+      box-shadow: 0 8px 34px rgba(9,30,66,0.06);
+      margin-bottom:18px;
+    }
+    .hero-left h2{margin:0;font-size:26px}
+    .hero-left p.lead{color:var(--muted);margin-top:10px;font-size:14px}
+    .hero-cta{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;font-size:14px;border:1px solid rgba(15,23,36,0.06)}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border:none;box-shadow:0 8px 24px rgba(255,77,166,0.12)}
+    .btn-muted{background:transparent;color:var(--muted)}
+    /* right card */
+    .hero-right{background:var(--card);border-radius:12px;padding:18px;text-align:center;border:1px solid rgba(15,23,36,0.04)}
+    .hero-right .profile-photo{width:160px;height:160px;border-radius:50%;overflow:hidden;margin:0 auto 12px;border:4px solid var(--accent);box-shadow:0 20px 60px rgba(255,77,166,0.08)}
+    .hero-right .profile-photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-right h3{margin:6px 0 4px 0;font-size:18px}
+    .hero-right small{display:block;color:var(--muted)}
+    .contact-list{margin-top:12px;text-align:left}
+    .contact-list div{font-size:14px;color:#111827;margin:6px 0}
+    .contact-list a{color:var(--accent);text-decoration:none}
+    /* Grid content */
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:18px;}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(15,23,36,0.04)}
+    h3{margin-top:0}
+    .about p{color:var(--muted)}
+    .projects .project{display:flex;gap:12px;padding:12px;border-radius:10px;background:white;border:1px solid rgba(15,23,36,0.04);align-items:center;margin-bottom:12px}
+    .proj-thumb{width:78px;height:56px;border-radius:8px;background:linear-gradient(180deg,#fff,#fbfbfe);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;border:1px solid rgba(15,23,36,0.03)}
+    /* skills */
+    .skills .skill{margin-bottom:12px}
+    .skill .label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+    .bar{height:10px;background:#ecebf1;border-radius:10px;margin-top:8px;overflow:hidden}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0;transition:width .9s ease}
+    /* contact form */
+    form input, form textarea{width:100%;padding:10px;margin-top:6px;margin-bottom:12px;border:1px solid rgba(15,23,36,0.06);border-radius:8px;background:white;color:#0f1724;font-size:14px}
+    form button{padding:10px 14px;border-radius:10px;border:none;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;font-weight:700}
+    footer{text-align:center;color:var(--muted);margin-top:18px;font-size:13px}
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .hero-right{order:3}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <!-- small photo left of name -->
+        <div class="photo-small">
+          <img src="chinmayi.jpg.jpg" alt="Chinmayi S">
+        </div>
+        <div>
+          <h1>Chinmayi S</h1>
+          <p>Frontend Developer — Bangalore, India</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#hire">Hire Me</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <h2>Crafting interactive and responsive websites.</h2>
+        <p class="lead">I build accessible, user-friendly frontends and also turn data into insights using Power BI.</p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-muted" href="#hire">Hire Me</a>
+          <a class="btn" href="Chinmayi_resume.pdf" download>Download CV</a>
+          <a class="btn" href="https://www.linkedin.com/in/chinmayi-s-354138355?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+
+      <aside class="hero-right" aria-label="profile card">
+        <div class="profile-photo">
+          <img src="chinmayi.jpg.jpg".jpg" alt="Chinmayi S">
+        </div>
+        <h3>Chinmayi S</h3>
+        <small>Frontend Developer</small>
+        <div class="contact-list">
+          <div><strong>Phone:</strong> 9113010328</div>
+          <div><strong>Email:</strong> <a href="mailto:Chinmayi0136@gmail.com">Chinmayi0136@gmail.com</a></div>
+          <div><strong>Location:</strong> Bangalore, Karnataka 560098</div>
+          <div><strong>DOB:</strong> 13-11-2005</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Main content -->
+    <div class="grid">
+      <main class="card">
+        <section id="about" class="about">
+          <h3>About Me</h3>
+          <p>I’m Chinmayi S, a passionate Frontend Developer from Bangalore, skilled in building modern and responsive websites using HTML, CSS, and JavaScript. I’m also experienced in Data Analytics using Power BI and have worked on CRM analytics dashboards that turn raw data into actionable insights.</p>
+          <p style="color:var(--muted);margin-top:10px"><strong>Hobby:</strong> Cooking</p>
+        </section>
+
+        <section id="projects" class="projects" style="margin-top:18px">
+          <h3>Selected Projects</h3>
+
+          <article class="project">
+            <div class="proj-thumb">WEB</div>
+            <div style="flex:1">
+              <strong>Gaming Website</strong>
+              <div style="color:var(--muted);font-size:13px">Frontend project — HTML, CSS, JavaScript</div>
+              <div style="margin-top:8px"><a class="btn" href="https://chinmayi1331-hash.github.io/gamingwebsite/" target="_blank">Open Project</a></div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="proj-thumb">PBI</div>
+            <div style="flex:1">
+              <strong>CRM Data Analytics Dashboard</strong>
+              <div style="color:var(--muted);font-size:13px">Power BI project — Data cleaning, visualizations, KPIs (CRM / Sales dataset)</div>
+              <div style="margin-top:8px"><a class="btn" href="CRM.pptx" download>Download Project (PPT)</a>
+</div>
+            </div>
+          </article>
+        </section>
+
+        <!-- Hire form -->
+        <section id="hire" style="margin-top:18px">
+          <h3>Hire Me</h3>
+          <p style="color:var(--muted)">Interested in collaborating or hiring? Fill out the form below and I'll get back to you.</p>
+
+          <form action="https://formsubmit.co/Chinmayi0136@gmail.com" method="POST" style="margin-top:12px">
+            <!-- FormSubmit hidden fields -->
+            <input type="hidden" name="_subject" value="New Hire Me Message from Portfolio!">
+            <input type="hidden" name="_next" value="https://chinmayi1331-hash.github.io/portfolio/">
+            <label style="font-size:13px;color:var(--muted)">Your Name</label>
+            <input type="text" name="name" required>
+            <label style="font-size:13px;color:var(--muted)">Your Email</label>
+            <input type="email" name="email" required>
+            <label style="font-size:13px;color:var(--muted)">Your Message</label>
+            <textarea name="message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
+
+        <section id="contact" style="margin-top:18px">
+          <h3>Get in touch</h3>
+          <p style="color:var(--muted)">You can also reach me directly by phone or email for part-time roles, internships, or freelance work.</p>
+          <div style="margin-top:10px">
+            <a class="btn btn-primary" href="mailto:Chinmayi0136@gmail.com">Email Me</a>
+            <a class="btn" href="#hire">Open Hire Form</a>
+          </div>
+        </section>
+      </main>
+
+      <aside class="card">
+        <section id="skills" class="skills">
+          <h3>Skills</h3>
+
+          <div class="skill"><div class="label"><span>HTML</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
+          <div class="skill"><div class="label"><span>CSS</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
+          <div class="skill"><div class="label"><span>JavaScript</span><span>80%</span></div><div class="bar"><i style="width:80%"></i></div></div>
+          <div class="skill"><div class="label"><span>GitHub</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
+          <div class="skill"><div class="label"><span>Data Analytics / Power BI</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
+        </section>
+
+        <section style="margin-top:16px">
+          <h3>Quick Info</h3>
+          <p style="color:var(--muted);font-size:14px;margin:0"><strong>Name:</strong> Chinmayi S</p>
+          <p style="color:var(--muted);font-size:14px;margin:6px 0 0 0"><strong>Role:</strong> Frontend Developer</p>
+          <p style="color:var(--muted);font-size:14px;margin:6px 0 0 0"><strong>Location:</strong> Bangalore, Karnataka</p>
+        </section>
+      </aside>
+    </div>
+
+    <footer>Designed & built by <strong>Chinmayi S</strong> • © 2025</footer>
+  </div>
+
+  <script>
+    // animate skill bars on load
+    window.addEventListener('load', function(){
+      document.querySelectorAll('.bar > i').forEach(function(el){
+        const w = el.style.width || '0%';
+        el.style.width = '0%';
+        setTimeout(()=> el.style.width = w, 120);
+      });
+    });
+
+    // smooth scroll for anchor nav
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        const id = this.getAttribute('href').slice(1);
+        if(!id) return;
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  </script>
+</body>
+</html>
+
+
